@@ -12,7 +12,7 @@
     <ap-vmessage *ngIf="loginForm.get('password').errors?.required" text= "Password is required!"></ap-vmessage>
   </div>
 
-  <button [disabled]="loginForm.valid" type="submit" class="btn btn-primary btn-block">login</button>
+  <button [disabled]="!loginForm.valid" type="submit" class="btn btn-primary btn-block">login</button>
 
 </form>
 
