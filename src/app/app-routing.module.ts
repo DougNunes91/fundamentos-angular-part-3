@@ -6,9 +6,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { AuthGuard } from './core/auth/auth.guard';
+import { SignUpComponent } from './home/signup/signup.component';
 
 const routes: Routes = [
 {path: '', component: SignInComponent, canActivate: [AuthGuard]},
+{path: 'signup', component: SignUpComponent},
 {path: 'user/:userName', component: PhotoListComponent, resolve: {photos: PhotoListResolver}},
 {path: 'p/add', component: PhotoFormComponent},
 {path: '**', component: NotFoundComponent}
