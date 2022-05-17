@@ -20,6 +20,10 @@ export class SignInComponent implements OnInit {
       userName: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    if (this.platformId.isPlatformBrowser()) this.userNameInput.nativeElement.focus();
+
+
   }
 
   login() {
@@ -29,12 +33,12 @@ export class SignInComponent implements OnInit {
     const password = this.loginForm.get('password').value;
 
     this.auth.authenticate(userName, password).subscribe(
-      () => 
+      () =>
       //após a validacao de login, podemos navegar para uma outra rota
       // navigateByUrl('user/' + userName) faz concatenacao, mas é mais preferivel usar o navigate
       // para evitar concatenacoes
         this.router.navigate(['user', userName]),
-        
+
       (err) => {
         console.log("Não autenticado");
         //limpa o formulario
