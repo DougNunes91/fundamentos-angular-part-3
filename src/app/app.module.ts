@@ -18,11 +18,10 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     HttpClientModule,
     PhotosModule,
-    AppRoutingModule,
     ErrorsModule,
     CardModule,
-    HomeModule,
-    CoreModule
+    CoreModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

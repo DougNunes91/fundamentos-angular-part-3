@@ -13,7 +13,11 @@ export class SignInComponent implements OnInit {
 
   @ViewChild('userNameInput') userNameInput: ElementRef<HTMLInputElement>
 
-  constructor(private formBuilder: FormBuilder, private auth: AuthService, private router: Router, private platformId: PlatformDetectorService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private auth: AuthService,
+    private router: Router,
+    private platformId: PlatformDetectorService) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
